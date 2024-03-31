@@ -12,9 +12,8 @@ function cleanUpPlayButtons() {
 	});
 }
 
-
 const ExamplePage: FC = () => {
-	const canvasRef = useRef<HTMLCanvasElement>();
+	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const gameRef = useRef<Engine>(null);
 
 	const resetGame = () => {
