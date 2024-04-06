@@ -7,16 +7,16 @@ const PageList: { route: string, title: string, info?: string }[] = [
 ];
 
 const HomePage: FC = () => {
-	const [height, setHeight] = useState(window.innerHeight - 100);
-	window.addEventListener('resize', () => setHeight(window.innerHeight - 100));
+	const [height, setHeight] = useState(window.innerHeight);
+	window.addEventListener('resize', () => setHeight(window.innerHeight));
 
 	return (
-		<div style={{ display: 'flex', justifyContent: 'center' }}>
-			<div style={{ height: height, overflowY: 'auto', overflowX: 'hidden', }}>
-				<div>
+		<div style={{}}>
+			<div style={{ height: height, overflowY: 'auto', overflowX: 'hidden', justifyContent: 'center', textAlign: 'center' }}>
+				<div >
 					{PageList.map((page, index) => {
 						return (
-							<Link to={page.route} key={index}>{page.title}</Link>
+							<p key={index}><Link to={page.route} >{page.title}</Link></p>
 						);
 					})}
 				</div>
